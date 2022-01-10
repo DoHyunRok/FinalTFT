@@ -9,7 +9,7 @@ public interface freeservice {
 
 	ArrayList<freevo> boardList();
 	int write(freevo vo);
-	List getboard(freevo vo);
+	List<freevo> getboard(freevo vo);
 	int updateCnt(freevo vo);
 
 }

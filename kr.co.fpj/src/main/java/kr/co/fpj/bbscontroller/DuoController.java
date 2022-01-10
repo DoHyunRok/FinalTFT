@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import kr.co.fpj.bbsservice.duoservice;
 import kr.co.fpj.bbsvo.duovo;
-import kr.co.fpj.bbsvo.freevo;
 
 @Controller
 public class DuoController {
@@ -35,7 +34,7 @@ public class DuoController {
 		System.out.println(vo.getTitle());
 		vo.setWriter(vo.getWriter());
 		vo.setContent(vo.getContent());
-		int board = se.write(vo);
+		se.write(vo);
 		return "redirect:/";
 	}
 	@RequestMapping(value = "/duowrite.do", method = RequestMethod.GET)
@@ -46,11 +45,11 @@ public class DuoController {
 	public String getboard(duovo vo,Model model) {
 		System.out.println("::: 상세보기 :::");
 		String path ="";
-		List board = se.getboard(vo);
+		List<duovo> board= se.getboard(vo);
 		System.out.println(board);
 		if(board != null) {
 			model.addAttribute("board", board);
-			int rs = se.updateCnt(vo);
+			se.updateCnt(vo);
 			path = "freeview";
 		}else {
 			path = "free";

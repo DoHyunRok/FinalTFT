@@ -24,8 +24,8 @@ public class freeserviceImpl implements freeservice {
 		return dao.insertBoard(vo);
 	}
 	@Override
-	public List getboard(freevo vo){
-		List board = dao.getboard(vo);
+	public List<freevo> getboard(freevo vo){
+		List<freevo> board = dao.getboard(vo);
 		return board;
 	}
 	@Override

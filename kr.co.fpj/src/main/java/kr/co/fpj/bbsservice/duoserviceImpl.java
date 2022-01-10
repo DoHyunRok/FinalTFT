@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import kr.co.fpj.bbsdao.duodao;
 import kr.co.fpj.bbsvo.duovo;
-import kr.co.fpj.bbsvo.freevo;
 
 @Service
 public class duoserviceImpl implements duoservice {
@@ -25,8 +24,8 @@ public class duoserviceImpl implements duoservice {
 		return dao.insertBoard(vo);
 	}
 	@Override
-	public List getboard(duovo vo){
-		List board = dao.getboard(vo);
+	public List<duovo> getboard(duovo vo){
+		List<duovo> board = dao.getboard(vo);
 		return board;
 	}
 	@Override

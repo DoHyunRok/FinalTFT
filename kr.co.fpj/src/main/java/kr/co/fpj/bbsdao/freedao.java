@@ -9,7 +9,6 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-
 import kr.co.fpj.bbsvo.freevo;
 
 @Repository
@@ -92,11 +91,11 @@ public class freedao {
 			pstmt.setString(3, vo.getContent());
 			if (vo.getTitle() == " " || vo.getWriter() == " " || vo.getContent() == "") {
 				System.out.println(":::미작성:::");
-				return -1;
+				return rs;
 			} else {
 				System.out.println(":::작성:::");
 				rs = pstmt.executeUpdate();
-				return 1;
+				return rs;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -106,7 +105,7 @@ public class freedao {
 
 	private final String BOARD_GET = "select * from free where seq=?";
 
-	public List getboard(freevo vo) {
+	public List<freevo> getboard(freevo vo) {
 		List<freevo> board = new ArrayList<freevo>();
 
 

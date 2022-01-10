@@ -11,7 +11,7 @@ public interface duoservice {
 
 	int write(duovo vo);
 
-	List getboard(duovo vo);
+	List<duovo> getboard(duovo vo);
 
 	int updateCnt(duovo vo);
 

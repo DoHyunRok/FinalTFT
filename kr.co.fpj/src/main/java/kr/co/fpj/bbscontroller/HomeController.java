@@ -1,17 +1,12 @@
 package kr.co.fpj.bbscontroller;
 
-import java.text.DateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,22 +21,8 @@ public class HomeController {
 
 	@Autowired
 	freeservice se;
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
-		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
-		
+	public String home() {
 		return "home";
 	}
 	@RequestMapping(value = "/free.do", method = RequestMethod.GET)
@@ -65,18 +46,18 @@ public class HomeController {
 		System.out.println(vo.getTitle());
 		vo.setWriter(vo.getWriter());
 		vo.setContent(vo.getContent());
-		int board = se.write(vo);
+		se.write(vo);
 		return "redirect:/";
 	}
 	@RequestMapping(value = "/freeview.do", method = RequestMethod.GET)
 	public String getboard(freevo vo,Model model) {
 		System.out.println("::: 상세보기 :::");
 		String path ="";
-		List board = se.getboard(vo);
+		List<freevo> board = se.getboard(vo);
 		System.out.println(board);
 		if(board != null) {
 			model.addAttribute("board", board);
-			int rs = se.updateCnt(vo);
+			se.updateCnt(vo);
 			path = "freeview";
 		}else {
 			path = "free";
@@ -107,8 +88,12 @@ public class HomeController {
 	public String champion() {
 		return "champion";
 	}
-	@RequestMapping(value = "/sidebar.do", method = RequestMethod.GET)
-	public String sidebar() {
-		return "sidebar";
+	@RequestMapping(value = "/map.do", method = RequestMethod.GET)
+	public String map() {
+		return "Map";
+	}
+	@RequestMapping(value = "/login.do", method = RequestMethod.GET)
+	public String login() {
+		return "login";
 	}
 }
