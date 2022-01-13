@@ -12,7 +12,7 @@
 	<jsp:include page="header.jsp"></jsp:include>
 	<table class="tap">
 		<tr>
-			<td>인기순</td>
+			<td><input type="button">인기순</td>
 			<td>댓글순</td>
 			<td>조회수순</td>
 			<td>최신순</td>

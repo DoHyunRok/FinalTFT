@@ -76,7 +76,7 @@ html {
 <title>자유게시판</title>
 </head>
 <body>
-	<div class="logo"></div>
+	<a href="http://localhost:8080/fpj/"><div class="logo"></div></a>
 	<header>
 
 			<ul>

@@ -5,22 +5,27 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import kr.co.fpj.CommentService.FreeCommentService;
+import kr.co.fpj.Commentvo.FreeCommentVo;
 import kr.co.fpj.bbsservice.freeservice;
 import kr.co.fpj.bbsvo.freevo;
 
 @Controller
 public class HomeController {
 
-	@Autowired
+	@Inject
 	freeservice se;
+	@Inject
+	FreeCommentService cse;
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home() {
 		return "home";
@@ -41,22 +46,30 @@ public class HomeController {
 	}
 	@RequestMapping(value = "/freewrite.do", method = RequestMethod.POST)
 	public String write(freevo vo,Model model) {
-		System.out.println(":::write post:::");
-		vo.setTitle(vo.getTitle());
+		String path = null;
 		System.out.println(vo.getTitle());
-		vo.setWriter(vo.getWriter());
-		vo.setContent(vo.getContent());
-		se.write(vo);
-		return "redirect:/";
+		if(vo.getTitle()!= "") {
+			vo.setTitle(vo.getTitle());
+			vo.setWriter(vo.getWriter());
+			vo.setContent(vo.getContent());
+			se.write(vo);
+			path = "free";
+			System.out.println(":::True :::");
+		}else {
+			path ="redirect:freewrite.do";
+			System.out.println(":::false::::");
+		}
+		return path;
 	}
 	@RequestMapping(value = "/freeview.do", method = RequestMethod.GET)
-	public String getboard(freevo vo,Model model) {
-		System.out.println("::: 상세보기 :::");
+	public String getboard(freevo vo,Model model,FreeCommentVo cvo) {
 		String path ="";
 		List<freevo> board = se.getboard(vo);
-		System.out.println(board);
 		if(board != null) {
 			model.addAttribute("board", board);
+			List<FreeCommentVo> cboard = cse.ReplyView(vo.getSeq());
+			System.out.println(cboard);
+			model.addAttribute("cboard",cboard);
 			se.updateCnt(vo);
 			path = "freeview";
 		}else {
@@ -66,23 +79,22 @@ public class HomeController {
 		return path;
 	}
 	@RequestMapping(value = "/boardcheck.do", method = RequestMethod.POST)
+	@ResponseBody
 	public String boardcheck(HttpServletRequest req,Model model,freevo vo,String title) {
 		System.out.println("::: board check :::");
 		vo.setTitle(req.getParameter("title"));
-		int cnt1 =0;
+		String cnt1 =null;
 		
-		if (vo.getTitle() != null || vo.getContent() != null){
-			cnt1 = 1;
+		if (vo.getTitle() != ""){
+			cnt1 = "1";
 			Map<Object, Object> map = new HashMap<Object, Object>();
 			map.put("cnt1",cnt1);
 			System.out.println(":::집에가자:::");
-			System.out.println(cnt1);
 		}else {
-			cnt1 = 0;
+			cnt1 = "0";
 			System.out.println(":::false 탐:::");
-			System.out.println(cnt1);
 		}
-		return "redirect:/";
+		return cnt1;
 	}
 	@RequestMapping(value = "/champion.do", method = RequestMethod.GET)
 	public String champion() {
@@ -92,8 +104,32 @@ public class HomeController {
 	public String map() {
 		return "Map";
 	}
-	@RequestMapping(value = "/login.do", method = RequestMethod.GET)
-	public String login() {
-		return "login";
+	
+//	@RequestMapping(value = "/psort.do", method = RequestMethod.POST)
+//	@ResponseBody
+//	public ArrayList<freevo> psort(freevo vo,Model model) {
+//		ArrayList<freevo> boardlist = null;
+//		boardlist = se.psort(vo);
+//		if(boardlist.isEmpty()) {
+//			System.out.println("Miss");
+//		}else {
+//			model.addAttribute("boardlist",boardlist);
+//			System.out.println(":::성공:::");
+//			System.out.println(boardlist);
+//		}
+//		return boardlist;
+//	}
+	@RequestMapping(value = "/psort.do", method = RequestMethod.POST)
+	public String psort(freevo vo,Model model) {
+		ArrayList<freevo> boardlist = null;
+		boardlist = se.psort(vo);
+		if(boardlist.isEmpty()) {
+			System.out.println("Miss");
+		}else {
+			model.addAttribute("boardlist",boardlist);
+			System.out.println(":::성공:::");
+			System.out.println(boardlist);
+		}
+		return "free";
 	}
 }

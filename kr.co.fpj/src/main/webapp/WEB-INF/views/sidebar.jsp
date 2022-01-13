@@ -5,30 +5,66 @@
 <html>
 <head>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+
+
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>sidebar</title>
 </head>
 <body>
-	<div>
-			<form method="post" action="sidebar.do">
-				<table border="1">
-					<thead>
-						<tr>
-							<th colspan="4">챔피언 검색</th>
-						</tr>
-					</thead>
-					<tr>
-						<td colspan="3"><input type="text" id="champname"></td> 
-						<td colspan="1"><input type="submit" id=champsearch></td>
+	<div class="sidebar">
+		<table border="1" class="sidenav">
+			<thead>
+
+				<tr>
+					<th colspan="4">챔피언 검색</th>
+				</tr>
+			</thead>
+			<tr>
+				<td colspan="4"><input type="text" id="champname"> <input
+					type="submit" id=champsearch onclick="champsearch()" value="검색"></td>
+			</tr>
+			<tbody id="boardList">
+				<c:forEach items="${sideboard}" var="board">
+					<tr id="searchrow">
+						<td id="searchd">${board.champname}</td>
+						<td id="searchd">${board.player}</td>
 					</tr>
-					<c:forEach items="${sideboard}" var="champ">
-						<tr>
-							<td colspan="1">${champ.champname}</td>
-							<td colspan="3">${champ.player}</td>
-						</tr>
-					</c:forEach>
-				</table>
-			</form>
-		</div>
+				</c:forEach>
+			</tbody>
+		</table>
+	</div>
+	<script>
+		function champsearch() {
+			var champname = $('#champname').val();
+			$.ajax({
+				data : {
+					"champname" : champname
+				},
+				url : "sidebar.do",
+				type : "POST",
+				success : function(data) {
+					if (data.length === 0) {
+						alert("챔프가 없습니다.")
+					} else {
+						$('#boardList').empty();
+						var result = data;
+						console.log(result);
+						var str = '<TR id="searchrow">';
+						$.each(result, function(i) {
+							str += '<TD id="searchd">' + result[i].champname
+									+ '</TD><TD>' + result[i].player + '</TD>'
+							str += '</TR id="searchrow">'
+							console.log(str)
+						});
+					}
+					$("#boardList").append(str);
+				},
+				error : function(jqXHR, textStatus, errorThrown) {
+					alert("에러발생")
+				}
+			});
+		}
+	</script>
 </body>
 </html>

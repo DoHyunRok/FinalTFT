@@ -32,6 +32,9 @@ public class freeserviceImpl implements freeservice {
 	public int updateCnt(freevo vo) {
 		return dao.updateCnt(vo);
 	}
-	
+	@Override
+	public ArrayList<freevo> psort(freevo vo) {
+		return dao.psort(vo);
+	}
 	
 }

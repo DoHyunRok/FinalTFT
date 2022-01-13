@@ -2,10 +2,12 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
-<link href="${pageContext.request.contextPath}/resources/css/finalcss.css" rel="stylesheet" type="text/css"/>
 <!DOCTYPE html>
 <html>
 <head>
+<link
+	href="${pageContext.request.contextPath}/resources/css/finalcss.css"
+	rel="stylesheet" type="text/css" />
 <meta charset="UTF-8">
 <title>게시판 보기</title>
 </head>
@@ -55,6 +57,34 @@
 
 			</table>
 		</div>
+	</div>
+	<div>
+		<form method="post" action="commentinsert.do">
+			<table>
+			<c:forEach items="${board}" var="board">
+				<tr>
+					<td><input type="text" class="form-control" placeholder="작성자"
+						name="writer"></td>
+					<td><input type="text" class="form-control"
+						placeholder="댓글을 입력하세요." name="content" style="width: 110%"></td>
+					<td><input type="hidden" name="bseq"
+						value="${board.seq}"> <input type="submit" value="댓글 작성">
+				</tr>
+				</c:forEach>
+			</table>
+		</form>
+	</div>
+	<div>
+		<table>
+			<c:forEach items="${cboard}" var="cboard">
+				<tr>
+				<td>${cboard.cseq }</td>
+				<td>${cboard.writer }</td>
+				<td>${cboard.content }</td>
+				</tr>
+			</c:forEach>
+		</table>
+	
 	</div>
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>

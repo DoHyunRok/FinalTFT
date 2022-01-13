@@ -11,5 +11,6 @@ public interface freeservice {
 	int write(freevo vo);
 	List<freevo> getboard(freevo vo);
 	int updateCnt(freevo vo);
+	ArrayList<freevo> psort(freevo vo);
 
 }

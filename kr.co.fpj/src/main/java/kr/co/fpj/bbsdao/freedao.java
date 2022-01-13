@@ -117,6 +117,7 @@ public class freedao {
 			if(rs.next()) {
 				board.add(new freevo(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4),rs.getString(5).substring(0,10),
 						rs.getInt(6)));
+				System.out.println(board);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -144,5 +145,28 @@ public class freedao {
 
 		}
 		return rs;
+	}
+	private final String PSORT = "select * from free order by cnt desc limit 5";
+
+	public ArrayList<freevo> psort(freevo vo) {
+		ArrayList<freevo> psortboard = new ArrayList<freevo>();
+		System.out.println("dao - psort");
+
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(PSORT);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				psortboard.add(new freevo(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4),rs.getString(5).substring(0,10),
+						rs.getInt(6)));
+				System.out.println(psortboard);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+
+		}
+		return psortboard;
 	}
 }

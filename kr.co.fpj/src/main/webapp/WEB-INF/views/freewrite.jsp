@@ -3,27 +3,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="${pageContext.request.contextPath}/resources/css/finalcss.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript">
-	function boardcheck(){
-		var title = $("#title").val();
-		$.ajax({
-			type: 'POST',
-			url : "boardcheck.do",
-			data : "title=" + title,
-			dataType : "json",
-			var cnt1 = data.cnt1;
-			console.log(cnt1)
-			if(cnt>0){
-				alert("글이 작성되었습니다.");
-			}else{
-				alert("제목을 입력해주세요.");
-				
-			}
-		}})
-	}
-</script>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<link href="${pageContext.request.contextPath}/resources/css/finalcss.css" rel="stylesheet" type="text/css"/>
+
 <meta charset="UTF-8">
 <title>글 쓰기</title>
 </head>
@@ -43,7 +25,7 @@
 
 						<tr>
 							<td><input type="text" class="form-control"
-								placeholder="글 제목" name="title" maxlength="50"></td>
+								placeholder="글 제목" name="title" maxlength="50" id ="title"></td>
 						</tr>
 						<tr>
 							<td><input type="text" class="form-control"
@@ -64,5 +46,29 @@
 		</div>
 	</div>
 	<jsp:include page="footer.jsp"></jsp:include>
+	<script type="text/javascript">
+	function boardcheck(){	
+		var title = $("#title").val();
+		$.ajax({
+			type: 'POST',
+			url : "boardcheck.do",
+			data : {
+				"title" : title
+			},
+			success : function(data) {
+				if (data === "0") {
+					alert("제목을 입력해주세요.")
+				} else {
+					alert("글이 작성되었습니다.")
+						console.log(data)
+					}
+			},
+			error : function(jqXHR, textStatus, errorThrown) {
+				alert("에러발생")
+			}
+		})
+	};
+</script>
+	
 </body>
 </html>

@@ -4,17 +4,11 @@
 <html>
 <head>
 <style>
-footer{
-	height: 5%;
-  	position : relative;
-  	transform : translateY(-100%);
-}
 #footer {
 	clear: both;
 	width: 100%;
 	backgroud-color: #f9f9f9;
 	bottom: 0;
-	min-height: 100%;
 	padding: bottom;
 }
 
@@ -47,7 +41,7 @@ footer{
 	<br>
 	<br>
 	<footer>
-		<div id="footer">
+		<div id="footerdiv">
 			<div class="copyright">
 				<p>Copyright @2021-2022
 				<p>
