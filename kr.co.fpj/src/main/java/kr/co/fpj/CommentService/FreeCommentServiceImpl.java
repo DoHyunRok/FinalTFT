@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import kr.co.fpj.CommentDAO.FreeCommentDAO;
 import kr.co.fpj.Commentvo.FreeCommentVo;
+import kr.co.fpj.bbsvo.freevo;
 @Service
 public class FreeCommentServiceImpl implements FreeCommentService {
 	
@@ -21,5 +22,9 @@ public class FreeCommentServiceImpl implements FreeCommentService {
 	public ArrayList<FreeCommentVo> ReplyView(int seq){
 		System.out.println(":::ReplyView se:::");
 		return dao.replyview(seq);
+	}
+	@Override
+	public int commentcount(int seq){
+		return dao.updatecommentCnt(seq);
 	}
 }

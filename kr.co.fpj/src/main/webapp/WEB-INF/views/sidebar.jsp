@@ -12,7 +12,7 @@
 <title>sidebar</title>
 </head>
 <body>
-	<div class="sidebar">
+	<div class="sidebar"style="border: 1px solid black";>
 		<table border="1" class="sidenav">
 			<thead>
 

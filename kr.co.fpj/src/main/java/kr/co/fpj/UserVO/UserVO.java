@@ -4,14 +4,15 @@ public class UserVO {
 	int userseq;
 	String id;
 	String password;
-	String ninkname;
+	String nickname;
 	public UserVO() {
+		
 	}
-	public UserVO(int userseq, String id, String password, String ninkname) {
+	public UserVO(int userseq, String id, String password, String nickname) {
 		this.userseq = userseq;
 		this.id = id;
 		this.password = password;
-		this.ninkname = ninkname;
+		this.nickname = nickname;
 	}
 	public int getUserseq() {
 		return userseq;
@@ -31,15 +32,15 @@ public class UserVO {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getNinkname() {
-		return ninkname;
+	public String getNickname() {
+		return nickname;
 	}
-	public void setNinkname(String ninkname) {
-		this.ninkname = ninkname;
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
 	}
 	@Override
 	public String toString() {
-		return "UserVO [userseq=" + userseq + ", id=" + id + ", password=" + password + ", ninkname=" + ninkname + "]";
+		return "UserVO [userseq=" + userseq + ", id=" + id + ", password=" + password + ", nickname=" + nickname + "]";
 	}
 	
 }

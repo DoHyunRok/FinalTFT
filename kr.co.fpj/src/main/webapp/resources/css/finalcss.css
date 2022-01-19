@@ -181,3 +181,33 @@ td, tr {
 .main thead{
 	margin-top:20px;
 }
+#idpass {
+   position: absolute;
+   left: 41%;
+   top: 45%;
+   border-radius: 10px;
+   opacity: 0.5;
+}
+
+#encbtn {
+   position: absolute;
+   left: 41%;
+   top: 58%;
+   border-radius: 10px;
+   opacity: 1;
+}
+
+#join {
+   position: absolute;
+   left: 48%;
+   top: 58%;
+   border-radius: 10px;
+   opacity: 1;
+}
+#KakaoJoin {
+   position: absolute;
+   left: 44%;
+   top: 61%;
+   border-radius: 10px;
+   opacity: 1;
+}

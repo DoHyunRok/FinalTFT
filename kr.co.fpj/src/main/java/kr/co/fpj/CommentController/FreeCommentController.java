@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import kr.co.fpj.CommentService.FreeCommentService;
 import kr.co.fpj.Commentvo.FreeCommentVo;
+import kr.co.fpj.bbsvo.freevo;
 
 
 @Controller
@@ -14,14 +15,12 @@ public class FreeCommentController {
 	@Autowired
 	FreeCommentService se;
 	@RequestMapping(value = "/commentinsert.do", method = RequestMethod.POST)
-	public String commentwrite(FreeCommentVo vo) {
+	public String commentwrite(FreeCommentVo vo,freevo fvo) {
 		vo.setWriter(vo.getWriter());
-		System.out.println(vo.getWriter());
 		vo.setContent(vo.getContent());
-		System.out.println(vo.getContent());
 		vo.setRegdate(vo.getRegdate());
-		System.out.println(vo.getRegdate());
 		vo.setBseq(vo.getBseq());
+		se.commentcount(vo.getBseq());
 		int rs = se.WriteComment(vo);
 		String path = null;
 		if(rs != -2) {

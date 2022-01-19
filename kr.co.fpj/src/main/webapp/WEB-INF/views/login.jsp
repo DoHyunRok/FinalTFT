@@ -1,11 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+x<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<link
-	href="${pageContext.request.contextPath}/resources/css/finalcss.css"
-	rel="stylesheet" type="text/css" />
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<link href="${pageContext.request.contextPath}/resources/css/finalcss.css" rel="stylesheet" type="text/css"/>
+<script src="./resources/js/security/rsa.js"></script>
+<script src="./resources/js/security/jsbn.js"></script>
+<script src="./resources/js/security/prng4.js"></script>
+<script src="./resources/js/security/rng.js"></script>
+<script src="./resources/js/security/core.min.js"></script>
+<script src="./resources/js/security/sha256.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
 <meta charset="UTF-8">
 <style>
 body {
@@ -14,79 +20,56 @@ body {
 	background-repeat: no-repeat;
 }
 
-.loginbox {
-	width:100%
-}
-
-.loginform {
-	display: block;
-	width: 100%;
-	height: 34px;
-	padding: 6px 12px;
-	font-size: 14px;
-	line-height: 1.42857143;
-	color: #555;
-	background-color: #fff;
-	background-image: none;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-	-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow
-		ease-in-out .15s;
-	-o-transition: border-color ease-in-out .15s, box-shadow ease-in-out
-		.15s;
-	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-	margin:5px;
-}
-.submitbutton{
-	margin:5px;
-	width: 113.5%;
-	height: 34px;
-	padding: 6px 12px;
-	font-size: 14px;
-	line-height: 1.42857143;
-	color: #555;
-	background-color: #66fff;
-	background-image: none;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-	-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow
-		ease-in-out .15s;
-	-o-transition: border-color ease-in-out .15s, box-shadow ease-in-out
-		.15s;`
-	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-
-}
-.loginreg{
-	padding: 6px 12px;
-	text-align: center;
-	position: relative;
-	margin-left: 40px;
-}
-.logjoin{
-	text-decoration: none;
-	color: white;
-}
 </style>
 <title>로그인</title>
 </head>
 <body>
-	<div class="loginbox">
-		<form action="login.do" method="post">
+		<form action="login.do" method="post" class= "loginform">
+			<div id="idpass">
+			
 			<div>
-				<input type="text" placeholder="ID" class="loginform">
+				<input type="text" placeholder="ID" class="loginform" name="id"  style="height:35px;width:230px;">
 			</div>
 			<div>
-				<input type="password" placeholder="Password" class="loginform">
-				<input type="submit" value="로그인" class="submitbutton">
+				<input type="password" placeholder="Password" class="loginform" name="password" id="password" style="height:35px;width:230px;">
+			</div>
+			</div>
+			<div>
+				<input type="submit" value="로그인" class="submitbutton" id="encbtn" onclick="encrypt()" style="width:95px;">
+				<input type="hidden" id="encryptedPWD" name="encryptedPWD">
 			</div>
 			<div class="loginreg">
-				<a href="join.do" class="logjoin">회원가입</a>
+				<a href="join.do" class="logjoin" id="join">회원가입</a>
 			</div>
 		</form>
+		 <form action="join.do" method="POST"  >
+      <input type="submit" value="회원가입" id="join" style = "width:95px;" >
+      </form>
+			  <div id="KakaoJoin">
+			  <a href="https://kauth.kakao.com/oauth/authorize?client_id=a3a2eb99f69485ea774186c509f3bea3&redirect_uri=http://localhost:8080/login&response_type=code">
+            <img src="resources/image/KakaoLoginBtn.png">
 	</div>
+	<script>
+	<!-- 암호화 -->
+	var publicKeyExponent = "${publicKeyExponent}";
+	var publicKeyModulus = "${publicKeyModulus}";
+	function encrypt(){
+		var inputPWD = document.getElementById("password").value;
+		var sha256 = CryptoJS.SHA256(document.getElementById("password").value).toString();
+		console.log(inputPWD);
+		console.log(sha256);
+		var rsa = new RSAKey();
+		
+		rsa.setPublic(publicKeyModulus,publicKeyExponent);
+		
+        document.getElementById("encryptedPWD").value = rsa.encrypt(sha256);
+        
+        document.getElementById("password").value ="";
+        
+        console.log(document.getElementById("encryptedPWD").value);
+        
+        document.getElementById("loginform").submit();
+	}
+	</script>
 </body>
 </html>

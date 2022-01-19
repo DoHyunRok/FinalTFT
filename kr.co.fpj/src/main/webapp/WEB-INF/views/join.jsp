@@ -99,12 +99,12 @@ body {
 	height:30px;
 }
 </style>
-<script src="resources/js/core.min.js"></script>
-<script src="resources/js/security/jsbn.js"></script>
-<script src="resources/js/security/prng4.js"></script>
-<script src="resources/js/security/rng.js"></script>
-<script src="resources/js/security/core.min.js"></script>
-<script src="resources/js/security/sha256.min.js"></script>
+<script src="./resources/js/security/rsa.js"></script>
+<script src="./resources/js/security/jsbn.js"></script>
+<script src="./resources/js/security/prng4.js"></script>
+<script src="./resources/js/security/rng.js"></script>
+<script src="./resources/js/security/core.min.js"></script>
+<script src="./resources/js/security/sha256.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
 <title>로그인</title>
 </head>
@@ -113,25 +113,24 @@ body {
 	<form class="form_design" method="post" action="join.do">
 		<ul>
 			<li>아이디</li>
-			<li><input type="text" placeholder="ID" class="loginform" id="id" name="id"></li>
+			<li><input type="text" placeholder="ID" class="loginform" id="id" name="id" autocomplete="name"></li>
 			<li><button type="button" onclick="check();" class="check">중복체크</button></li>
 		</ul>
 		<ul>
 			<li>비밀번호</li>
-			<li><input type="password" placeholder="Password" class="loginform" name="password" id="password1"></li>
+			<li><input type="password" placeholder="Password" class="loginform" name="password" id="password" autocomplete="new-password"></li>
 		</ul>	
 		<ul>
 			<li>비밀번호 재확인</li>
-			<li><input type="password" placeholder="PasswordCheck" class="loginform" name="password2" id="password2"></li>
+			<li><input type="password" placeholder="PasswordCheck" class="loginform" name="password2" id="password2"autocomplete="on"></li>
 		</ul>	
 		<ul>
 			<li><font id="passcheck" size='2'></font></li>
 		</ul>
 		<ul>
 			<li>롤 닉네임 입력</li>
-			<li><input type="text" class="loginform" placeholder ="LoL NickName"></li>
+			<li><input type="text" class="loginform" placeholder ="LoL NickName" name="nickname" id="nickname"></li>
 		</ul>
-		<input type="hidden" id="encryptedID" name="encryptedID">
 		<input type="hidden" id="encryptedPWD" name="encryptedPWD">
 		<ul>
 			<li id="joinsubmit"><input type="submit"  value="회원가입" id="encbtn" onclick="encrypt()"></li>
@@ -194,23 +193,18 @@ body {
 	console.log(publicKeyExponent);
 	console.log(publicKeyModulus);
 	function encrypt(){
-		var inputID = document.getElementById("id").value;
 		var inputPWD = document.getElementById("password").value;
 		var sha256 = CryptoJS.SHA256(document.getElementById("password").value).toString();
-		console.log(inputID);
 		console.log(inputPWD);
 		console.log(sha256);
 		var rsa = new RSAKey();
 		
 		rsa.setPublic(publicKeyModulus,publicKeyExponent);
 		
-		document.getElementById("encryptedID").value = rsa.encrypt(inputID);
         document.getElementById("encryptedPWD").value = rsa.encrypt(sha256);
         
-        document.getElementById("id").value ="";
         document.getElementById("password").value ="";
         
-        console.log(document.getElementById("encryptedID").value);
         console.log(document.getElementById("encryptedPWD").value);
         
         document.getElementById("form_design").submit();

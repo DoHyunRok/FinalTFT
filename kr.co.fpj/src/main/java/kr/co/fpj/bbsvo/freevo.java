@@ -2,13 +2,32 @@ package kr.co.fpj.bbsvo;
 
 public class freevo {
 
+	int rownum;
 	int seq;
 	String title;
 	String content;
 	String writer;
 	String regdate;
 	int cnt;
+	int commentcnt;
 	public freevo() {
+	}
+	public freevo(int rownum, int seq, String title, String content, String writer, String regdate, int cnt,
+			int commentcnt) {
+		this.rownum = rownum;
+		this.seq = seq;
+		this.title = title;
+		this.content = content;
+		this.writer = writer;
+		this.regdate = regdate;
+		this.cnt = cnt;
+		this.commentcnt = commentcnt;
+	}
+	public int getRownum() {
+		return rownum;
+	}
+	public void setRownum(int rownum) {
+		this.rownum = rownum;
 	}
 	public int getSeq() {
 		return seq;
@@ -46,19 +65,17 @@ public class freevo {
 	public void setCnt(int cnt) {
 		this.cnt = cnt;
 	}
-	public freevo(int seq, String title, String content, String writer, String regdate, int cnt) {
-		super();
-		this.seq = seq;
-		this.title = title;
-		this.content = content;
-		this.writer = writer;
-		this.regdate = regdate;
-		this.cnt = cnt;
+	public int getCommentcnt() {
+		return commentcnt;
+	}
+	public void setCommentcnt(int commentcnt) {
+		this.commentcnt = commentcnt;
 	}
 	@Override
 	public String toString() {
-		return "bbs1VO [seq=" + seq + ", title=" + title + ", content=" + content + ", writer=" + writer + ", regdate="
-				+ regdate + ", cnt=" + cnt + "]";
+		return "freevo [rownum=" + rownum + ", seq=" + seq + ", title=" + title + ", content=" + content + ", writer="
+				+ writer + ", regdate=" + regdate + ", cnt=" + cnt + ", commentcnt=" + commentcnt + "]";
 	}
+	
 	
 }

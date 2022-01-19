@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import org.springframework.stereotype.Repository;
 
 import kr.co.fpj.Commentvo.FreeCommentVo;
+import kr.co.fpj.bbsvo.freevo;
 
 @Repository
 public class FreeCommentDAO {
@@ -75,6 +76,8 @@ public class FreeCommentDAO {
 		}catch (Exception e) {
 			e.printStackTrace();
 
+		}finally {
+			close(rs, pstmt, conn);
 		}
 		return -2;
 	}
@@ -93,8 +96,31 @@ public class FreeCommentDAO {
 		}catch (Exception e) {
 			e.printStackTrace();
 
+		}finally {
+			close(rs, pstmt, conn);
 		}
 		return cboard;
+	}
+	private final String BOARD_UPDATE_commentCNT = "update free set commentcnt = commentcnt + 1 where seq=?";
+
+	public int updatecommentCnt(int seq) {
+		System.out.println("dao - updatecommentCnt()");
+		int result = 0;
+
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(BOARD_UPDATE_commentCNT);
+			pstmt.setInt(1, seq);
+			System.out.println(pstmt);
+			result = pstmt.executeUpdate();
+			System.out.println(result);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(rs, pstmt, conn);
+		}
+		return result;
 	}
 
 }

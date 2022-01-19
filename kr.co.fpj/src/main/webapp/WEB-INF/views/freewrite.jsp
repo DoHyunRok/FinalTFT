@@ -10,6 +10,8 @@
 <title>글 쓰기</title>
 </head>
 <body>
+<% String nickname=null;
+nickname = (String) session.getAttribute("nickname"); %>
 	<jsp:include page="header.jsp"></jsp:include>
 	<div class="container">
 		<div class="row">
@@ -29,7 +31,7 @@
 						</tr>
 						<tr>
 							<td><input type="text" class="form-control"
-								placeholder="작성자" name="writer" id="writer"></td>
+								placeholder="작성자" name="writer" id="writer"value=<%=nickname %>></td>
 						</tr>
 						<tr>
 							<td><textarea class="form-control" placeholder="글 내용"

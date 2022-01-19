@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.co.fpj.bbsdao.freedao;
+import kr.co.fpj.bbsvo.PageVO;
 import kr.co.fpj.bbsvo.freevo;
 
 @Service
@@ -15,8 +16,8 @@ public class freeserviceImpl implements freeservice {
 	freedao dao;
 	
 	@Override
-	public ArrayList<freevo> boardList(){
-		ArrayList<freevo> boardList = dao.getboardlist();
+	public ArrayList<freevo> boardList(PageVO pvo){
+		ArrayList<freevo> boardList = dao.getboardlist(pvo);
 		return boardList;
 	}
 	@Override
@@ -33,8 +34,33 @@ public class freeserviceImpl implements freeservice {
 		return dao.updateCnt(vo);
 	}
 	@Override
-	public ArrayList<freevo> psort(freevo vo) {
-		return dao.psort(vo);
+	public ArrayList<freevo> searchTitle(String bs){
+		System.out.println(":::제목검색 SeIMPL:::");
+		return dao.searchTitle(bs);
 	}
-	
+	@Override
+	public ArrayList<freevo> searchContent(String bs){
+		System.out.println(":::내용검색 IMpL:::");
+		return dao.searchContent(bs);
+	}
+	@Override
+	public ArrayList<freevo> nextpage(int cpage){
+		return dao.nextpage(cpage);
+	}
+	@Override
+	public ArrayList<freevo> cntsort(){
+		return dao.cntsort();
+	}
+	@Override
+	public ArrayList<freevo> cntboardlist(PageVO pvo){
+		return dao.getcntboardlist(pvo);
+	}
+	@Override
+	public ArrayList<freevo> commentcntboardlist(PageVO pvo){
+		return dao.getcommentboardlist(pvo);
+	}
+	@Override
+	public ArrayList<freevo> regboardlist(PageVO pvo){
+		return dao.getregboardlist(pvo);
+	}
 }
