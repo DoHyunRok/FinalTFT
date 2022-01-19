@@ -4,14 +4,17 @@ x<%@ page language="java" contentType="text/html; charset=UTF-8"
 <html lang="ko">
 <head>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<link href="${pageContext.request.contextPath}/resources/css/finalcss.css" rel="stylesheet" type="text/css"/>
+<link
+	href="${pageContext.request.contextPath}/resources/css/finalcss.css"
+	rel="stylesheet" type="text/css" />
 <script src="./resources/js/security/rsa.js"></script>
 <script src="./resources/js/security/jsbn.js"></script>
 <script src="./resources/js/security/prng4.js"></script>
 <script src="./resources/js/security/rng.js"></script>
 <script src="./resources/js/security/core.min.js"></script>
 <script src="./resources/js/security/sha256.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
 <meta charset="UTF-8">
 <style>
 body {
@@ -19,35 +22,37 @@ body {
 	background-size: cover;
 	background-repeat: no-repeat;
 }
-
 </style>
 <title>로그인</title>
 </head>
 <body>
-		<form action="login.do" method="post" class= "loginform">
-			<div id="idpass">
-			
+	<form action="login.do" method="post" class="loginform">
+		<div id="idpass">
+
 			<div>
-				<input type="text" placeholder="ID" class="loginform" name="id"  style="height:35px;width:230px;">
-			</div>
-			<div>
-				<input type="password" placeholder="Password" class="loginform" name="password" id="password" style="height:35px;width:230px;">
-			</div>
+				<input type="text" placeholder="ID" class="loginform" name="id"
+					style="height: 35px; width: 230px;">
 			</div>
 			<div>
-				<input type="submit" value="로그인" class="submitbutton" id="encbtn" onclick="encrypt()" style="width:95px;">
-				<input type="hidden" id="encryptedPWD" name="encryptedPWD">
+				<input type="password" placeholder="Password" class="loginform"
+					name="password" id="password" style="height: 35px; width: 230px;">
 			</div>
-			<div class="loginreg">
-				<a href="join.do" class="logjoin" id="join">회원가입</a>
-			</div>
-		</form>
-		 <form action="join.do" method="POST"  >
-      <input type="submit" value="회원가입" id="join" style = "width:95px;" >
-      </form>
-			  <div id="KakaoJoin">
-			  <a href="https://kauth.kakao.com/oauth/authorize?client_id=a3a2eb99f69485ea774186c509f3bea3&redirect_uri=http://localhost:8080/login&response_type=code">
-            <img src="resources/image/KakaoLoginBtn.png">
+		</div>
+		<div>
+			<input type="submit" value="로그인" class="submitbutton" id="encbtn"
+				onclick="encrypt()" style="width: 95px;"> <input
+				type="hidden" id="encryptedPWD" name="encryptedPWD">
+		</div>
+		<div class="loginreg">
+			<a href="join.do" class="logjoin" id="join">회원가입</a>
+		</div>
+	</form>
+	<form action="join.do" method="POST">
+		<input type="submit" value="회원가입" id="join" style="width: 95px;">
+	</form>
+	<div id="KakaoJoin">
+		<a href="https://kauth.kakao.com/oauth/authorize?client_id=00da4a8c1af4d8dc872603672e5439d3&redirect_uri=http://localhost:8080/login&response_type=code"></a>
+		<img src="resources/image/KakaoLoginBtn.png">
 	</div>
 	<script>
 	<!-- 암호화 -->
