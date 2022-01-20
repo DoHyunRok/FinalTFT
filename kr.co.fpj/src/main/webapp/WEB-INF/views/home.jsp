@@ -41,12 +41,6 @@ body {
 
 	</div>
 
-	<div id="KakaoLogin">
-		<a
-			href="https://kauth.kakao.com/oauth/authorize?client_id=	a3a2eb99f69485ea774186c509f3bea3&redirect_uri=http://localhost:8080/login&response_type=code">
-			<img src="resources/image/KakaoLoginBtn.png">
-		</a>
-	</div>
 
 </body>
 </html>

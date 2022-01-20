@@ -51,8 +51,9 @@ body {
 		<input type="submit" value="회원가입" id="join" style="width: 95px;">
 	</form>
 	<div id="KakaoJoin">
-		<a href="https://kauth.kakao.com/oauth/authorize?client_id=00da4a8c1af4d8dc872603672e5439d3&redirect_uri=http://localhost:8080/login&response_type=code"></a>
-		<img src="resources/image/KakaoLoginBtn.png">
+		 <a href="https://kauth.kakao.com/oauth/authorize?client_id=00da4a8c1af4d8dc872603672e5439d3&redirect_uri=http://localhost:8080/login&response_type=code">
+		 <img src="resources/image/KakaoLoginBtn.png"></a>
+		
 	</div>
 	<script>
 	<!-- 암호화 -->
