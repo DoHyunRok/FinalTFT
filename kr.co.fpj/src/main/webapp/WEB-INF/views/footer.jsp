@@ -4,50 +4,65 @@
 <html>
 <head>
 <style>
-#footer {
-	clear: both;
-	top: 120%;
-	width: 100%;
-	backgroud-color: #f9f9f9;
-	bottom: 0;
-	padding: bottom;
-}
 
-.copyright {
-	float: left;
-	width: 50%;
-}
 
-#footer .copyright p {
-	font-size: 14px;
-	color: #999;
-	padding: 32px 0 0 40px;
-}
-
-#footer .address {
-	float: right;
-	width: 50%;
-}
-
-#footer .address p {
-	font-size: 14px;
-	color: #999;
-	padding: 32px 40px 0 0;
-	text-align: center;
-}
 </style>
 <meta charset="UTF-8">
 </head>
 <body>
 	<br>
-	<br>
-	<footer id = "copyright">
-			<p>Copyright @2021-2022
-			<p>
-		</div>
-	</footer>
-	<footer id = "address">
-			<p>서울 종로구 삼일대로 17길 51 스타골드빌딩 503호</p>
-	</footer>
-</body>
+  <!-- Site footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h6>About</h6>
+            <p class="text-justify">더조은 학원 <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Categories</h6>
+            <ul class="footer-links">
+              <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
+              <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
+              <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
+              <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
+              <li><a href="http://scanfcode.com/category/android/">Android</a></li>
+              <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Quick Links</h6>
+            <ul class="footer-links">
+              <li><a href="http://scanfcode.com/about/">About Us</a></li>
+              <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
+              <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
+              <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
+              <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by TFT
+
+            </p>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+              <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+            </ul>
+          </div>
+        </div>
+      </div>
+</footer>
+	 </body>
 </html>

@@ -37,6 +37,17 @@ public class KakaoController {
 	}
 	
 	
+	
+	@RequestMapping(value="/logout")
+	public String logout(HttpSession session) {
+	    kakao.kakaoLogout((String)session.getAttribute("access_Token"));
+	    session.removeAttribute("access_Token");
+	    session.removeAttribute("nickname");
+	    session.removeAttribute("email");
+	    return "home";
+	}
+
+	
 }
 /*	@RequestMapping(value="/login" ,method = RequestMethod.GET)
 	public String login(@RequestParam("code") String code, x`HttpSession session) {

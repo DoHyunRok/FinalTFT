@@ -23,7 +23,7 @@
 		</p>
 		</div>
 	<div class="main">
-	<table class="bbs" id="bbs">
+	<table class="bbs">
 		<tr>
 			<th width=70px;>글 번호</th>
 			<th width=200px colspan="2">글 제목</th>
@@ -66,11 +66,12 @@
 	<div id="morelist">
 		<input type="submit" value="더보기" onclick="morelist()" >
 	<br>
-	</div>	
-	<div id="freewrite">
-	<a href="freewrite.do">글쓰기</a>
-	<br>
-</div>
+	</div>
+	<div id = "freewrite">
+	<form action="freewrite.do">
+	<input type = "submit" value= "글쓰기">
+	</form>
+	</div>
 	<jsp:include page="footer.jsp"></jsp:include>
 	
 </body>

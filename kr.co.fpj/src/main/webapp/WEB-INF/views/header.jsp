@@ -34,8 +34,10 @@ li.icon {
 }
 
 header {
-	background: #9999ff;
+	background: #26272b;
 	padding: 20px;
+	text-transform: uppercase;
+
 }
 
 .headtap {
@@ -45,16 +47,19 @@ header {
 	margin-right: 100px;
 	width: 55%;
 	height: 5%;
-	color: white;
+	color: #fff;
+	font-size: 16px;
 	text-align: center;
 	padding: 3px 33px;
 	text-decoration: none;
-	opacity: 0.5;
+	opacity: 1;
+	letter-spacing: 2px;
+	text-transform: uppercase;;
 }
 
 .headtap:hover {
-	height: 110%;
-	background-color: gray;
+	height: 100%;
+	border: 1px dotted white;
 }
 
 html {
@@ -68,7 +73,8 @@ html {
 .logo {
 	height: 110px;
 	text-align: center;
-	border: 1px solid black;
+	font-size: 16px;
+	border: 1px dotted white;
 	width: 100%;
 	margin-bottom: 5px;
 }

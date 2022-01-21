@@ -13,8 +13,14 @@
 <meta charset="UTF-8">
 <title>sidebar</title>
 </head>
-<body>
+
+<body>  
+		<div id = "sdname">
+	${nickname}님 / 
+		<a href = "/logout">로그아웃 </a><br>
+		</div>
 	<div class="sidebar" style="border: 1px solid black";>
+
 		<table border="1" style="position: relative;">
 			<thead>
 				<tr>
@@ -23,9 +29,9 @@
 			</thead>
 			<tr>
 
-				<td colspan="4"><input type="text" id="champname"> <input
-					type="submit" id=champsearch onclick="champsearch()" value="검색">
-					</td> 
+				<td colspan="4"><input type="text" id="champname"> <br></br>
+				<input type="submit" id=champsearch onclick="champsearch()" value="검색">
+				</td> 
 				
 			</tr>
 			<tbody id="boardList">
