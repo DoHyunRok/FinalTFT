@@ -5,24 +5,28 @@
 <html>
 <head>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-
+<link
+	href="${pageContext.request.contextPath}/resources/css/finalcss.css"
+	rel="stylesheet" type="text/css" />
 
 
 <meta charset="UTF-8">
 <title>sidebar</title>
 </head>
 <body>
-	<div class="sidebar"style="border: 1px solid black";>
-		<table border="1" class="sidenav">
+	<div class="sidebar" style="border: 1px solid black";>
+		<table border="1" style="position: relative;">
 			<thead>
-
 				<tr>
-					<th colspan="4">챔피언 검색</th>
+					<th colspan="4" style="position: relative;">챔피언 검색</th>
 				</tr>
 			</thead>
 			<tr>
+
 				<td colspan="4"><input type="text" id="champname"> <input
-					type="submit" id=champsearch onclick="champsearch()" value="검색"></td>
+					type="submit" id=champsearch onclick="champsearch()" value="검색">
+					</td> 
+				
 			</tr>
 			<tbody id="boardList">
 				<c:forEach items="${sideboard}" var="board">

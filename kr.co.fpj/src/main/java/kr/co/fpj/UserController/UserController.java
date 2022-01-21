@@ -47,6 +47,7 @@ public class UserController {
 	@RequestMapping(value = "/login.do", method = RequestMethod.POST)
 	public String login(HttpServletRequest request,Model model,UserVO vo,HttpSession session) {
 		
+		String path = null;
 		String encryptedPWD = request.getParameter("encryptedPWD");
 		PrivateKey privatekey = (PrivateKey) keymap.get("privateKey");
 		String userPWD=null;
@@ -58,11 +59,13 @@ public class UserController {
 		int result = se.login(vo, session);
 		if (result ==1) {
 			System.out.println("login 완료");
+			path = "redirect:free.do";
 		}else {
 			System.out.println("login 실패");
+			path="redirect:join.do";
 		}
 		
-		return "redirect:free.do";
+		return path ;
 	}
 	@RequestMapping(value = "/join.do", method = RequestMethod.GET)
 	public String join(HttpServletRequest request,Model model) {

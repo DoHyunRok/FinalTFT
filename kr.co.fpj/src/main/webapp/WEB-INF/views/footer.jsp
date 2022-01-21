@@ -6,6 +6,7 @@
 <style>
 #footer {
 	clear: both;
+	top: 120%;
 	width: 100%;
 	backgroud-color: #f9f9f9;
 	bottom: 0;
@@ -40,16 +41,13 @@
 <body>
 	<br>
 	<br>
-	<footer>
-		<div id="footerdiv">
-			<div class="copyright">
-				<p>Copyright @2021-2022
-				<p>
-			</div>
-			<div class="address">
-				<p>서울 종로구 삼일대로 17길 51 스타골드빌딩 503호</p>
-			</div>
+	<footer id = "copyright">
+			<p>Copyright @2021-2022
+			<p>
 		</div>
+	</footer>
+	<footer id = "address">
+			<p>서울 종로구 삼일대로 17길 51 스타골드빌딩 503호</p>
 	</footer>
 </body>
 </html>

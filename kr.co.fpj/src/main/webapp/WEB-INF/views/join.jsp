@@ -89,14 +89,21 @@ body {
 	margin-bottom: 5px;
 	color:white;
 }
-#content{
-	width:100%;
-	margin-left: 30%;
-	margin-top :15%;
+#joincontent {
+	position:absolute;
+	left: 35%;
+	top: 35%;
 }
 #joinsubmit{
 	margin-left: 170px;
 	height:30px;
+}
+
+#encbtn{
+	position:relative;
+	top:70%;
+	left:3%;
+
 }
 </style>
 <script src="./resources/js/security/rsa.js"></script>
@@ -109,7 +116,7 @@ body {
 <title>로그인</title>
 </head>
 <body>
-	<div id="content">
+	<div id="joincontent">
 	<form class="form_design" method="post" action="join.do">
 		<ul>
 			<li>아이디</li>

@@ -14,11 +14,14 @@
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 	<jsp:include page="sidebar.jsp"></jsp:include>
+		
+		<div id ="parafree">
 		<p id="para">
 			<button onclick="sort()" id = "cntsort" class="sort" value ="cntsort" name="cntsort">조회수순</button>
 			<button onclick="sort()" id = "commentsort" class="sort" value="commentsort" name="commentsort">댓글순</button>
 			<button onclick="sort()" id = "regsort" class="sort" value ="regsort" name="regsort">등록일순</button>
 		</p>
+		</div>
 	<div class="main">
 	<table class="bbs" id="bbs">
 		<tr>
@@ -50,6 +53,7 @@
 	</table>
 	</div>
 	
+	<div id = "parapara">
 	<form action = "BoardSearch.do" method = "POST" > 
 	<select name="SearchCategory">
 		<option value="title">제목 검색</option>
@@ -58,10 +62,15 @@
 	<input type = "text" placeholder = "검색어를 입력해주세요"id = "boardSearch"  name="boardSearch">
 	<input type = "submit" value = "검색" id="boardSeach1">
 	</form>
-		<input type="submit" onclick="morelist()" >
+	</div>
+	<div id="morelist">
+		<input type="submit" value="더보기" onclick="morelist()" >
 	<br>
-	<a href="freewrite.do" class="tapbutton-right">글쓰기</a>
+	</div>	
+	<div id="freewrite">
+	<a href="freewrite.do">글쓰기</a>
 	<br>
+</div>
 	<jsp:include page="footer.jsp"></jsp:include>
 	
 </body>

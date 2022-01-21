@@ -34,7 +34,7 @@ li.icon {
 }
 
 header {
-	background: #3c3c3c;
+	background: #9999ff;
 	padding: 20px;
 }
 
@@ -45,10 +45,11 @@ header {
 	margin-right: 100px;
 	width: 55%;
 	height: 5%;
-	color: orange;
+	color: white;
 	text-align: center;
 	padding: 3px 33px;
 	text-decoration: none;
+	opacity: 0.5;
 }
 
 .headtap:hover {

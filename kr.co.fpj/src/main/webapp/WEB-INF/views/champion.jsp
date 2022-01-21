@@ -10,8 +10,9 @@
 <title>챔피언 분석</title>
 </head>
 <body>
+	<jsp:include page="sidebar.jsp"></jsp:include>
 	<jsp:include page="header.jsp"></jsp:include>
-	<table border="1">
+	<table border="1" style="width: 80% ; margin-left:300px;">
 		<%
 			int i = 0;
 		while (i < 143) {

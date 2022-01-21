@@ -31,11 +31,13 @@ body {
 
 			<div>
 				<input type="text" placeholder="ID" class="loginform" name="id"
-					style="height: 35px; width: 230px;">
+					style="height: 40px; width: 230px;">
 			</div>
+			<br>
+
 			<div>
 				<input type="password" placeholder="Password" class="loginform"
-					name="password" id="password" style="height: 35px; width: 230px;">
+					name="password" id="password" style="height: 40px; width: 230px;">
 			</div>
 		</div>
 		<div>
@@ -43,39 +45,33 @@ body {
 				onclick="encrypt()" style="width: 95px;"> <input
 				type="hidden" id="encryptedPWD" name="encryptedPWD">
 		</div>
-		<div class="loginreg">
-			<a href="join.do" class="logjoin" id="join">회원가입</a>
-		</div>
+
+		<form action="join.do" method="POST">
+			<input type="submit" value="회원가입" id="join" style="width: 95px;">
+		</form>
 	</form>
-	<form action="join.do" method="POST">
-		<input type="submit" value="회원가입" id="join" style="width: 95px;">
-	</form>
-	<div id="KakaoJoin">
-		 <a href="https://kauth.kakao.com/oauth/authorize?client_id=00da4a8c1af4d8dc872603672e5439d3&redirect_uri=http://localhost:8080/login&response_type=code">
-		 <img src="resources/image/KakaoLoginBtn.png"></a>
-		
-	</div>
 	<script>
 	<!-- 암호화 -->
-	var publicKeyExponent = "${publicKeyExponent}";
-	var publicKeyModulus = "${publicKeyModulus}";
-	function encrypt(){
-		var inputPWD = document.getElementById("password").value;
-		var sha256 = CryptoJS.SHA256(document.getElementById("password").value).toString();
-		console.log(inputPWD);
-		console.log(sha256);
-		var rsa = new RSAKey();
-		
-		rsa.setPublic(publicKeyModulus,publicKeyExponent);
-		
-        document.getElementById("encryptedPWD").value = rsa.encrypt(sha256);
-        
-        document.getElementById("password").value ="";
-        
-        console.log(document.getElementById("encryptedPWD").value);
-        
-        document.getElementById("loginform").submit();
-	}
+		var publicKeyExponent = "${publicKeyExponent}";
+		var publicKeyModulus = "${publicKeyModulus}";
+		function encrypt() {
+			var inputPWD = document.getElementById("password").value;
+			var sha256 = CryptoJS.SHA256(
+					document.getElementById("password").value).toString();
+			console.log(inputPWD);
+			console.log(sha256);
+			var rsa = new RSAKey();
+
+			rsa.setPublic(publicKeyModulus, publicKeyExponent);
+
+			document.getElementById("encryptedPWD").value = rsa.encrypt(sha256);
+
+			document.getElementById("password").value = "";
+
+			console.log(document.getElementById("encryptedPWD").value);
+
+			document.getElementById("loginform").submit();
+		}
 	</script>
 </body>
 </html>

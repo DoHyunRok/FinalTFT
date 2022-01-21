@@ -2,6 +2,8 @@ package kr.co.fpj.UserController;
 
 import java.util.HashMap;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Controller;
@@ -21,16 +23,17 @@ public class KakaoController {
 	private KakaoAPI kakao;
 
 	@RequestMapping(value = "/login", produces="application/json;charset=UTF-8", method = RequestMethod.GET)
-	public String home(@RequestParam(value = "code", required = false) String code) throws Exception{
+	public String home(@RequestParam(value = "code", required = false) String code , HttpSession session) throws Exception{
 		System.out.println("#########" + code);
 		HttpHeaders responseHeaders = new HttpHeaders(); responseHeaders.add("Content-Type", "text/html; charset=utf-8");
 		String access_Token = kakao.getAccessToken(code);
 		HashMap<String, Object> userInfo = kakao.getUserInfo(access_Token);
+		session.setAttribute("nickname", userInfo.get("nickname"));
 		System.out.println("###access_Token#### : " + access_Token);
 		System.out.println("###userInfo#### : " + userInfo.get("email"));
 		System.out.println("###nickname#### : " + userInfo.get("nickname"));
 
-		return "join";
+		return "free";
 	}
 	
 	
