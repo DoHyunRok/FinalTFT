@@ -6,6 +6,10 @@
 	top: 45%;
 }
 
+#Searchjpg {
+	background: url(../image/Search.jpg);
+}
+
 #KakaoJoin {
 	position: relative;
 	left: 93%;
@@ -69,8 +73,6 @@
 	background-size: 100% 105%;
 	background-repeat: no-repeat;
 }
-
-
 
 th {
 	text-align: center;
@@ -178,7 +180,6 @@ td, tr {
 
 .map {
 	position: relative;
-	
 }
 
 .main {
@@ -200,8 +201,8 @@ td, tr {
 .sidebar {
 	display: block;
 	position: fixed;
-	height: 200px; 
-	width : 200px;
+	height: 200px;
+	width: 200px;
 	top: 28%;
 	left: 1%;
 	display: inline-flex;
@@ -269,27 +270,25 @@ r searchd {
 }
 
 #sdname {
-	position:fixed;
+	position: fixed;
 	margin-left: 2%;
 	display: block;
 	top: 25%;
 	left: 1%;
 	display: inline-flex;
-	
 }
 
 #freewrite {
-	width : 100px;
-	height : 100px;
+	width: 100px;
+	height: 100px;
 	position: relative;
 	left: 75%;
 	top: 100%;
-	color:white;
-	
+	color: white;
 }
 
 .site-footer {
-	margin-top : 50px;
+	margin-top: 50px;
 	background-color: #26272b;
 	padding: 45px 0 20px;
 	font-size: 13px;
@@ -309,7 +308,6 @@ r searchd {
 .site-footer h6 {
 	color: #fff;
 	font-size: 16px;
-	
 	margin-top: 5px;
 	letter-spacing: 2px;
 	text-transform: uppercase;
