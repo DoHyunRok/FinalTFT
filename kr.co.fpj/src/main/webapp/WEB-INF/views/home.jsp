@@ -40,7 +40,7 @@ body {
 		</select>
 		<input type="text" name="name" placeholder="아이디를 입력해주세요"
 			style="width: 200px; height: 50px; font-size: 15; opacity: 0.5; border-radius: 10px;">
-		<input type="submit" value="검색" id ="Searchjpg" style="border-radius: 10px; height: 30px; width: 50px;">
+		<input type="submit" value="검색" id ="Searchjpg">
 		</form>
 	</div>
 
