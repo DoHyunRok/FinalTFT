@@ -13,11 +13,14 @@
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 	<jsp:include page="sidebar.jsp"></jsp:include>
-	<div id = "parafree">
+	<div id="parafree">
 		<p id="para">
-			<button onclick="sort()" id = "cntsort" class="sort" value ="cntsort" name="cntsort">조회수순</button>
-			<button onclick="sort()" id = "commentsort" class="sort" value="commentsort" name="commentsort">댓글순</button>
-			<button onclick="sort()" id = "regsort" class="sort" value ="regsort" name="regsort">등록일순</button>
+			<button onclick="sort()" id="cntsort" class="sort" value="cntsort"
+				name="cntsort">조회수순</button>
+			<button onclick="sort()" id="commentsort" class="sort"
+				value="commentsort" name="commentsort">댓글순</button>
+			<button onclick="sort()" id="regsort" class="sort" value="regsort"
+				name="regsort">등록일순</button>
 		</p>
 	</div>
 	<div class="main">
@@ -44,16 +47,17 @@
 						<td>${board.regdate}</td>
 						<td>${board.cnt}</td>
 
-						
+
 
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
-		<div id = "freewrite" >
-		<br> <a href="duowrite.do">글쓰기</a> <br>
+		<div class="duowrite">
+			<form action="duowrite.do">
+				<input type="submit" value="글쓰기" id="duowrite">
+			</form>
 		</div>
-		</div>
-</body>
 <jsp:include page="footer.jsp"></jsp:include>
+</body>
 </html>

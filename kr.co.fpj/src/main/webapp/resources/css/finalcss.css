@@ -6,14 +6,11 @@
 	top: 45%;
 }
 
-input#Searchjpg{
+#Searchjpg {
 	background: url(../image/Search.jpg);
-	 background-position:  0px 0px;
-	cursor:pointer;
 	width: 40px;
-	height:40px;
-	background-repeat: no-repeat;
-	border: 0;
+	height: 40px;
+	background-size: 100%;
 }
 
 #KakaoJoin {
@@ -74,11 +71,9 @@ input#Searchjpg{
 	left: 50%;
 }
 
-.logo {
-	background-image: url("../image/teamlogo1.png");
-	background-size: 100% 105%;
-	background-repeat: no-repeat;
-}
+#champ tr:nth-child(odd) { background-color: #e6f1ff; }
+#champ tr:nth-child(even) { background-color: #f0f7ff; }
+#champ td:hover { background-color: #ffc5c2; cursor: pointer; }
 
 th {
 	text-align: center;
@@ -95,19 +90,25 @@ td, tr {
 .container {
 	margin-left: auto;
 	margin-right: auto;
-	width: 70%;
+	width: 80%;
 }
 
 .container .writebbs {
-	width: 70%;
+	margin-top :auto;
+	width: 80%;
 	hegiht: 60%;
 	margin-left: auto;
 	margin-right: auto;
 }
 
+.row{
+	
+margin-top: 20px;	
+	
+}
 .form-control {
 	display: block;
-	width: 100%;
+	width: 95%;
 	height: 34px;
 	padding: 6px 12px;
 	font-size: 14px;
@@ -186,21 +187,31 @@ td, tr {
 
 .map {
 	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
+#maploca {
+	position: absolute;
+	top: 22%;
 }
 
 .main {
-	margin-left: 150px;
 	padding: 5px;
 	top: 3%;
-	left: 2%;
 	position: relative;
+}
+
+#mapfooter {
+	margin-top: 43%;
+	width: 100%;
 }
 
 .bbs {
 	border: 1px solid black;
 	width: 75%;
 	min-height: 100%;
-	margin-left: 50px;
+	margin-left: 250px;
 	position: relative;
 }
 
@@ -269,7 +280,7 @@ r searchd {
 	top: 100%;
 }
 
-#morelist {
+.morelist {
 	position: relative;
 	left: 51%;
 	top: 100%;
@@ -284,12 +295,21 @@ r searchd {
 	display: inline-flex;
 }
 
-#freewrite {
+.freewrite {
 	width: 100px;
-	height: 100px;
+	height: 30px;
 	position: relative;
 	left: 75%;
 	top: 100%;
+	color: white;
+}
+
+.duowrite {
+	width: 100px;
+	height: 30px;
+	position: relative;
+	left: 75%;
+	top: 25%;
 	color: white;
 }
 
@@ -300,8 +320,13 @@ r searchd {
 	font-size: 13px;
 	line-height: 20px;
 	color: #737373;
+	width: 100%;
 }
 
+#duofooter {
+	
+	margin-left: 0;
+}
 .site-footer hr {
 	border-top-color: #bbb;
 	opacity: 0.5
@@ -318,6 +343,8 @@ r searchd {
 	letter-spacing: 2px;
 	text-transform: uppercase;
 }
+
+
 
 .site-footer a {
 	color: #737373;
@@ -452,4 +479,136 @@ r searchd {
 		margin-right: 0;
 		font-weight: 600
 	}
+}
+
+#cntsort, #commentsort, #regsort, #freewrite, #morelist, #duowrite {
+	width: 80px;
+	height: 30px;
+	background-color: black;
+	color: white;
+}
+
+@import url(//fonts.googleapis.com/css?family=Vibur);
+
+.logo {
+	background: #112 url(//images.weserv.nl/?url=i.imgur.com/6QJjYMe.jpg)
+		center no-repeat;
+	width: 100%;
+	text-align: center;
+	height: 150px;
+	position: absolute;
+	top: 0%;
+	user-select: none;
+}
+
+.logo b {
+	font: 350 8vh "Vibur";
+	color: #fee;
+	text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444,
+		0 0 0.1em #ff4444, 0 10px 3px #000;
+}
+
+.logo b span {
+	animation: blink linear infinite 2s;
+}
+
+.logo b span:nth-of-type(2) {
+	animation: blink linear infinite 3s;
+}
+
+@
+keyframes blink { 78% {
+	color: inherit;
+	text-shadow: inherit;
+}
+
+79
+%
+{
+color
+:
+#333;
+}
+80
+%
+{
+text-shadow
+:
+none;
+}
+81
+%
+{
+color
+:
+inherit;
+text-shadow
+:
+inherit;
+}
+82
+%
+{
+color
+:
+#333;
+text-shadow
+:
+none;
+}
+83
+%
+{
+color
+:
+inherit;
+text-shadow
+:
+inherit;
+}
+92
+%
+{
+color
+:
+#333;
+text-shadow
+:
+none;
+}
+92
+.5 % {
+	color: inherit;
+	text-shadow: inherit;
+}
+
+}
+
+/* follow me @nodws */
+#btn-twtr {
+	clear: both;
+	color: #fff;
+	border: 2px solid;
+	border-radius: 3px;
+	text-align: center;
+	text-decoration: none;
+	display: block;
+	font-family: sans-serif;
+	font-size: 14px;
+	width: 13em;
+	padding: 5px 10px;
+	font-weight: 600;
+	position: absolute;
+	bottom: 20px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	background: rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0 0px 3px rgba(0, 0, 0, 0.2);
+	opacity: 0.4
+}
+
+#btn-twtr:hover {
+	color: #fff;
+	opacity: 1
 }

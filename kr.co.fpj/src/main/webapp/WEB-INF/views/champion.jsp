@@ -12,7 +12,7 @@
 <body>
 	<jsp:include page="sidebar.jsp"></jsp:include>
 	<jsp:include page="header.jsp"></jsp:include>
-	<table border="1" style="width: 80% ; margin-left:300px;">
+	<table border="1" style="width: 80% ; margin-left:300px;" id="champ">
 		<%
 			int i = 0;
 		while (i < 143) {
@@ -25,7 +25,7 @@
 			<%
 				}
 			%>
-			<td><img src="resources/champion/AA (<%=i%>).png" alt=""
+			<td><img src="resources/champion/AA (<%=i%>).png" alt="<%=i%>"
 				width="70" ,height="70"></td>
 
 			<%

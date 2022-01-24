@@ -3,11 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="${pageContext.request.contextPath}/resources/css/finalcss.css" rel="stylesheet" type="text/css"/>
+<link
+	href="${pageContext.request.contextPath}/resources/css/finalcss.css"
+	rel="stylesheet" type="text/css" />
 <script type="text/javascript">
 	function boardcheck(){
 		var title = $("#title").val();
-		$.ajax({
+		$.ajax({ 
 			type: 'POST',
 			url : "boardcheck.do",
 			data : "title=" + title,
@@ -40,39 +42,36 @@
 								style="background-color: #eeeeee; text-align: center;">듀오게시판</th>
 						</tr>
 					<tbody>
-		<tr>
-							<td class = "tierbox">
-								티어 &nbsp: &nbsp
-								<select name ="tier1" class = "tier1">
-									<option value ="아이언" selected>아이언</option>			
-									<option value = "브론즈"> 브론즈</option>
-									<option value = "실버"> 실버</option>
-									<option value = "골드">골드</option>
-									<option value = "플래티넘">플래티넘</option>
-									<option value ="다이아몬드">다이아몬드</option>
-									<option value ="마스터">마스터</option>
-									<option value ="그랜드마스터">그랜드마스터</option>
-									<option value ="챌린저">챌린저</option>
-								</select>
-								~
-								<select name ="tier2" class = "tier2">
-									<option value ="아이언" selected>아이언</option>			
-									<option value = "브론즈"> 브론즈</option>
-									<option value = "실버"> 실버</option>
-									<option value = "골드">골드</option>
-									<option value = "플래티넘">플래티넘</option>
-									<option value ="다이아몬드">다이아몬드</option>
-									<option value ="마스터">마스터</option>
-									<option value ="그랜드마스터">그랜드마스터</option>
-									<option value ="챌린저">챌린저</option>
-								</select>
-								</td>
+						<tr>
+							<td class="tierbox">티어 &nbsp: &nbsp <select name="tier1"
+								class="tier1">
+									<option value="아이언" selected>아이언</option>
+									<option value="브론즈">브론즈</option>
+									<option value="실버">실버</option>
+									<option value="골드">골드</option>
+									<option value="플래티넘">플래티넘</option>
+									<option value="다이아몬드">다이아몬드</option>
+									<option value="마스터">마스터</option>
+									<option value="그랜드마스터">그랜드마스터</option>
+									<option value="챌린저">챌린저</option>
+							</select> ~ <select name="tier2" class="tier2">
+									<option value="아이언" selected>아이언</option>
+									<option value="브론즈">브론즈</option>
+									<option value="실버">실버</option>
+									<option value="골드">골드</option>
+									<option value="플래티넘">플래티넘</option>
+									<option value="다이아몬드">다이아몬드</option>
+									<option value="마스터">마스터</option>
+									<option value="그랜드마스터">그랜드마스터</option>
+									<option value="챌린저">챌린저</option>
+							</select>
+							</td>
 						</tr>
 						<tr>
 							<td><input type="text" class="form-control"
 								placeholder="글 제목" name="title" maxlength="50"></td>
 						</tr>
-						
+
 						<tr>
 						<tr>
 							<td><input type="text" class="form-control"
@@ -85,11 +84,7 @@
 					</tbody>
 				</table>
 				<br>
-				<input type="submit" class="tapbutton-right" value="글쓰기"
-					onclick="boardcheck();">
-
-				
-			</form>
+			<input type="submit" value="글쓰기" class="duowrite" onclick="boardcheck();" id="duowrite">
 		</div>
 	</div>
 	<jsp:include page="footer.jsp"></jsp:include>

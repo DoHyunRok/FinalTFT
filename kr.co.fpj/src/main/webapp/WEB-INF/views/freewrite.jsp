@@ -16,7 +16,6 @@ nickname = (String) session.getAttribute("nickname"); %>
 	<div class="container">
 		<div class="row">
 			<form method="post" action="freewrite.do">
-
 				<table class="writebbs">
 					<thead>
 						<tr>
@@ -40,7 +39,7 @@ nickname = (String) session.getAttribute("nickname"); %>
 					</tbody>
 				</table>
 				<br>
-				<input type="submit" class="tapbutton-right" value="글쓰기"
+				<input type="submit" class="freewrite" value="글쓰기" id="freewrite"
 					onclick="boardcheck();">
 
 				

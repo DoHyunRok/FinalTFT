@@ -12,6 +12,16 @@
 
 <html lang="ko">
 <style>
+select::-ms-expand { 
+	display: none;
+}
+.select {
+  -o-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 body {
 	background-image: url("resources/image/TFT.png");
 	background-size: cover;
@@ -40,7 +50,7 @@ body {
 		</select>
 		<input type="text" name="name" placeholder="아이디를 입력해주세요"
 			style="width: 200px; height: 50px; font-size: 15; opacity: 0.5; border-radius: 10px;">
-		<input type="submit" value="검색" id ="Searchjpg">
+		<input type="submit" value=" " id ="Searchjpg">
 		</form>
 	</div>
 
