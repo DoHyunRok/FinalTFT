@@ -71,9 +71,18 @@
 	left: 50%;
 }
 
-#champ tr:nth-child(odd) { background-color: #e6f1ff; }
-#champ tr:nth-child(even) { background-color: #f0f7ff; }
-#champ td:hover { background-color: #ffc5c2; cursor: pointer; }
+#champ tr:nth-child(odd) {
+	background-color: #e6f1ff;
+}
+
+#champ tr:nth-child(even) {
+	background-color: #f0f7ff;
+}
+
+#champ td:hover {
+	background-color: #ffc5c2;
+	cursor: pointer;
+}
 
 th {
 	text-align: center;
@@ -94,18 +103,17 @@ td, tr {
 }
 
 .container .writebbs {
-	margin-top :auto;
+	margin-top: auto;
 	width: 80%;
 	hegiht: 60%;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-.row{
-	
-margin-top: 20px;	
-	
+.row {
+	margin-top: 20px;
 }
+
 .form-control {
 	display: block;
 	width: 95%;
@@ -324,9 +332,9 @@ r searchd {
 }
 
 #duofooter {
-	
 	margin-left: 0;
 }
+
 .site-footer hr {
 	border-top-color: #bbb;
 	opacity: 0.5
@@ -343,8 +351,6 @@ r searchd {
 	letter-spacing: 2px;
 	text-transform: uppercase;
 }
-
-
 
 .site-footer a {
 	color: #737373;
@@ -508,107 +514,68 @@ r searchd {
 		0 0 0.1em #ff4444, 0 10px 3px #000;
 }
 
-.logo b span {
-	animation: blink linear infinite 2s;
+.logo b span{
+  animation: blink linear infinite 2s;
+}
+.logo b span:nth-of-type(2){
+  animation: blink linear infinite 3s;
+}	
+
+@keyframes blink {
+  78% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  79%{
+     color: #333;
+  }
+  80% {
+    
+    text-shadow: none;
+  }
+  81% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  82% {
+    color: #333;
+    text-shadow: none;
+  }
+  83% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  92% {
+    color: #333;
+    text-shadow: none;
+  }
+  92.5% {
+    color: inherit;
+    text-shadow: inherit;
+  }
 }
 
-.logo b span:nth-of-type(2) {
-	animation: blink linear infinite 3s;
-}
-
-@
-keyframes blink { 78% {
-	color: inherit;
-	text-shadow: inherit;
-}
-
-79
-%
-{
-color
-:
-#333;
-}
-80
-%
-{
-text-shadow
-:
-none;
-}
-81
-%
-{
-color
-:
-inherit;
-text-shadow
-:
-inherit;
-}
-82
-%
-{
-color
-:
-#333;
-text-shadow
-:
-none;
-}
-83
-%
-{
-color
-:
-inherit;
-text-shadow
-:
-inherit;
-}
-92
-%
-{
-color
-:
-#333;
-text-shadow
-:
-none;
-}
-92
-.5 % {
-	color: inherit;
-	text-shadow: inherit;
-}
-
-}
 
 /* follow me @nodws */
-#btn-twtr {
-	clear: both;
-	color: #fff;
-	border: 2px solid;
-	border-radius: 3px;
-	text-align: center;
-	text-decoration: none;
-	display: block;
-	font-family: sans-serif;
-	font-size: 14px;
-	width: 13em;
-	padding: 5px 10px;
-	font-weight: 600;
-	position: absolute;
-	bottom: 20px;
-	left: 0;
-	right: 0;
-	margin: 0 auto;
-	background: rgba(0, 0, 0, 0.2);
-	box-shadow: 0 0 0px 3px rgba(0, 0, 0, 0.2);
-	opacity: 0.4
-}
-
-#btn-twtr:hover {
-	color: #fff;
-	opacity: 1
-}
+#btn-twtr{
+  clear:both;
+  color:#fff;
+  border:2px solid;
+  border-radius:3px;
+  text-align:center;
+  text-decoration:none;
+  display:block;
+  font-family:sans-serif;
+  font-size:14px;
+  width:13em;
+  padding:5px 10px;
+  font-weight:600;
+  position:absolute;
+  bottom:20px;
+  left:0;
+  right:0;
+  margin:0 auto;
+  background:rgba(0,0,0,0.2);
+  box-shadow:0 0 0px 3px rgba(0,0,0,0.2);
+  opacity:0.4
+}#btn-twtr:hover{color:#fff;opacity:1}

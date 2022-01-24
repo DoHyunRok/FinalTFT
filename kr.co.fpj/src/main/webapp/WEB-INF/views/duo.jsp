@@ -55,9 +55,12 @@
 		</table>
 		<div class="duowrite">
 			<form action="duowrite.do">
-				<input type="submit" value="글쓰기" id="duowrite">
+				<input type="submit" value="글쓰기" id="duowrite"><br>
+			
 			</form>
 		</div>
-<jsp:include page="footer.jsp"></jsp:include>
+		<br>	<br>	<br>
+
 </body>
+<jsp:include page="footer.jsp"></jsp:include>
 </html>
