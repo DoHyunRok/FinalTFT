@@ -2,36 +2,73 @@
 
 #content {
 	position: relative;
-	left: 38%;
+	left: 35%;
 	top: 45%;
 }
 
+#homebanner {
+	position: relative;
+	top: 0%;
+	left: 38%;
+	animation-duration: 3s;
+	animation-name: slidein;
+}
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+   opacity : 1;
+
+  }
+  
+	   0%  {    left: 0px;   top: 0px; }
+      25%  { left: 500px; top: 0px; }
+      50%  {   left: 200px; top:0px; }
+      75%  {  left: 600px;   top: 0px; }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+    opacity:0.5;
+   
+      
+  }
+}
+
+#loginbtns{
+	position: absolute;
+	left : 85%;
+	top: 5%;
+	
+	
+}
 #Searchjpg {
-	background: url(../image/Search.jpg);
-	width: 40px;
-	height: 40px;
+	background: url(../image/Search.png);
+	width: 50px;
+	height: 50px;
 	background-size: 100%;
 }
 
-#KakaoJoin {
-	position: relative;
-	left: 93%;
-	top: -10.5%;
-}
-
-#homelogin {
-	position: relative;
-	left: 86%;
-	top: -3.5%;
-}
 
 #homeloginbox {
-	background-color: #9999ff;
+	background-color: #0066cc;
 	border: 2px solid black;
 	font-size: 15;
 	border-radius: 10px;
 	color: white;
 	cursor: pointer;
+	box-shadow: 10;
+}
+
+#homeloginbox:hover{
+	background-color: #990000;
+	border: 2px solid black;
+	font-size: 15;
+	border-radius: 10px;
+	color: white;
+	cursor: pointer;
+	border-style: wave;
+	
 }
 
 .arrow_box {
@@ -490,8 +527,46 @@ r searchd {
 #cntsort, #commentsort, #regsort, #freewrite, #morelist, #duowrite {
 	width: 80px;
 	height: 30px;
-	background-color: black;
+	border: solid black;
 	color: white;
+	background: black;
+	background: linear-gradient(0deg, #000000) 0%,(#392f31) 100%);
+}
+
+#cntsort:hover {
+	color: black;
+	background: transparent;
+	box-shadow: none;
+}
+
+#commentsort:hover {
+	color: black;
+	background: transparent;
+	box-shadow: none;
+}
+
+#regsort:hover {
+	color: black;
+	background: transparent;
+	box-shadow: none;
+}
+
+#freewrite:hover {
+	color: black;
+	background: transparent;
+	box-shadow: none;
+}
+
+#morelist:hover {
+	color: black;
+	background: transparent;
+	box-shadow: none;
+}
+
+#duowrite:hover {
+	color: black;
+	background: transparent;
+	box-shadow: none;
 }
 
 @import url(//fonts.googleapis.com/css?family=Vibur);
@@ -514,68 +589,357 @@ r searchd {
 		0 0 0.1em #ff4444, 0 10px 3px #000;
 }
 
-.logo b span{
-  animation: blink linear infinite 2s;
-}
-.logo b span:nth-of-type(2){
-  animation: blink linear infinite 3s;
-}	
-
-@keyframes blink {
-  78% {
-    color: inherit;
-    text-shadow: inherit;
-  }
-  79%{
-     color: #333;
-  }
-  80% {
-    
-    text-shadow: none;
-  }
-  81% {
-    color: inherit;
-    text-shadow: inherit;
-  }
-  82% {
-    color: #333;
-    text-shadow: none;
-  }
-  83% {
-    color: inherit;
-    text-shadow: inherit;
-  }
-  92% {
-    color: #333;
-    text-shadow: none;
-  }
-  92.5% {
-    color: inherit;
-    text-shadow: inherit;
-  }
+.logo b span {
+	animation: blink linear infinite 2s;
 }
 
+.logo b span:nth-of-type(2) {
+	animation: blink linear infinite 3s;
+}
+
+@
+keyframes blink { 78% {
+	color: inherit;
+	text-shadow: inherit;
+}
+
+79
+
+
+
+
+
+
+%
+{
+color
+
+
+
+
+
+
+:
+
+
+
+
+
+
+#333
+
+
+
+
+;
+}
+80
+
+
+
+
+
+
+%
+{
+text-shadow
+
+
+
+
+
+
+:
+
+
+
+
+
+
+none
+
+
+
+
+;
+}
+81
+
+
+
+
+
+
+%
+{
+color
+
+
+
+
+
+
+:
+
+
+
+
+
+
+inherit
+
+
+
+
+;
+text-shadow
+
+
+
+
+
+
+:
+
+
+
+
+
+
+inherit
+
+
+
+
+;
+}
+82
+
+
+
+
+
+
+%
+{
+color
+
+
+
+
+
+
+:
+
+
+
+
+
+
+#333
+
+
+
+
+;
+text-shadow
+
+
+
+
+
+
+:
+
+
+
+
+
+
+none
+
+
+
+
+;
+}
+83
+
+
+
+
+
+
+%
+{
+color
+
+
+
+
+
+
+:
+
+
+
+
+
+
+inherit
+
+
+
+
+;
+text-shadow
+
+
+
+
+
+
+:
+
+
+
+
+
+
+inherit
+
+
+
+
+;
+}
+92
+
+
+
+
+
+
+%
+{
+color
+
+
+
+
+
+
+:
+
+
+
+
+
+
+#333
+
+
+
+
+;
+text-shadow
+
+
+
+
+
+
+:
+
+
+
+
+
+
+none
+
+
+
+
+;
+}
+92
+
+
+
+
+
+
+.5
+
+
+ 
+
+
+%
+{
+color
+
+
+
+
+:
+
+
+ 
+
+
+inherit
+
+
+
+
+;
+text-shadow
+
+
+
+
+:
+
+
+ 
+
+
+inherit
+
+
+
+
+;
+}
+}
 
 /* follow me @nodws */
-#btn-twtr{
-  clear:both;
-  color:#fff;
-  border:2px solid;
-  border-radius:3px;
-  text-align:center;
-  text-decoration:none;
-  display:block;
-  font-family:sans-serif;
-  font-size:14px;
-  width:13em;
-  padding:5px 10px;
-  font-weight:600;
-  position:absolute;
-  bottom:20px;
-  left:0;
-  right:0;
-  margin:0 auto;
-  background:rgba(0,0,0,0.2);
-  box-shadow:0 0 0px 3px rgba(0,0,0,0.2);
-  opacity:0.4
-}#btn-twtr:hover{color:#fff;opacity:1}
+#btn-twtr {
+	clear: both;
+	color: #fff;
+	border: 2px solid;
+	border-radius: 3px;
+	text-align: center;
+	text-decoration: none;
+	display: block;
+	font-family: sans-serif;
+	font-size: 14px;
+	width: 13em;
+	padding: 5px 10px;
+	font-weight: 600;
+	position: absolute;
+	bottom: 20px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	background: rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0 0px 3px rgba(0, 0, 0, 0.2);
+	opacity: 0.4
+}
+
+#btn-twtr:hover {
+	color: #fff;
+	opacity: 1
+}

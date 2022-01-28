@@ -31,7 +31,7 @@
 		</p>
 	</div>
 	<div class="main">
-		<table class="bbs">
+		<table class="bbs" id ="bbs">
 			<tr>
 				<th width=70px;>글 번호</th>
 				<th width=200px colspan="2">글 제목</th>
@@ -84,7 +84,6 @@
 
 </body>
 <script>
-	//더보기
 	cntsort = document.getElementById("cntsort");
 	cntsort.addEventListener("click", function() {
 		document.getElementById("para").className = "cntsort";

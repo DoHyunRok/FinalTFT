@@ -23,9 +23,15 @@ select::-ms-expand {
 }
 
 body {
-	background-image: url("resources/image/TFT.png");
-	background-size: cover;
+	background-image: url("resources/image/kayne.png");
+	background-size : cover;
 	background-repeat: no-repeat;
+}
+
+#Ad{
+position:absolute;
+ left: 85%;
+ top: 30%;
 }
 
 
@@ -41,7 +47,7 @@ body {
 	<div  id="content">
 		<form action="http://127.0.0.1:5000/param" method="get">
 		<select name="po" class="po"
-			style="height: 30px; border-radius: 10px;">
+			style="height: 30px; border-radius: 10px; font-size: 20;">
 			<option value="supoter" selected>Supporter</option>
 			<option value="jungle">Jungle</option>
 			<option value="top" selected>Top</option>
@@ -49,12 +55,16 @@ body {
 			<option value="bottomr" selected>Bottom</option>
 		</select>
 		<input type="text" name="name" placeholder="아이디를 입력해주세요"
-			style="width: 200px; height: 50px; font-size: 15; opacity: 0.5; border-radius: 10px;">
+			style="width: 300px; height: 50px; font-size: 25; opacity: 0.5; border-radius: 10px;">
 		<input type="submit" value=" " id ="Searchjpg">
 		</form>
 	</div>
+	<div id = "homebanner">
+	 	<img src = "resources/image/ttttlogo11.png" width="500" height="150" ></div>
 
 
+
+ <div id = "loginbtns">
 	<div id="homelogin">
 		<form action="login.do">
 			<input type="submit" value="로그인"
@@ -71,6 +81,6 @@ body {
 			<img src="resources/image/KakaoLoginBtn.png">
 		</a>
 	</div>
-
+</div>
 </body>
 </html>
